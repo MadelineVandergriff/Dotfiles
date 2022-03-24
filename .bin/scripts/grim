@@ -1,0 +1,5 @@
+#! /bin/bash
+
+LINE=$(cat "$2" | grep -ni $1 | head -n 1 | awk 'BEGIN { FS = ":" } ; {print $1}')
+
+vim -c "$LINE" "$2"
